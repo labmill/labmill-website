@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Labmill privacy policy</title>
+<meta name="description" content="How Labmill collects, uses and keeps personal data, and your rights.">
+<meta name="theme-color" content="#0c2a44">
+<link rel="icon" href="../assets/mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#dcebf2"/><path d="M7.5 23.5h6v-6h6v-6h3" fill="none" stroke="#12395a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24.5" cy="11.5" r="3.4" fill="#e3a33b"/></svg>Labmill</a>
+    <nav aria-label="Main"><a class="signin" href="https://app.labmill.org/">Sign in</a></nav>
+  </div>
+</header>
+<main class="page">
+  <div class="wrap">
+    <p><strong>Draft. Not legal or tax advice. A lawyer must review it.</strong></p>
+    <h1>Privacy policy</h1>
+    <p>Effective date: [OWNER: date]. This policy covers labmill.org, app.labmill.org, the Labmill client (the desktop and terminal program) and the LabmillBot crawler. "Labmill", "we" and "us" mean [OWNER: legal name of the company, entity type, state and postal address; the company is not yet formed].</p>
+
+    <h2>Short version</h2>
+    <ul>
+      <li>Labmill never receives your data files, your code, your cluster passwords or your two-factor codes.</li>
+      <li>If you use the Labmill service, we keep your sign-in data, your job records and a few redacted log lines of failed jobs.</li>
+      <li>By default your redacted job records also help Labmill learn which settings work on which clusters. You can opt out. The opt-out plan costs 5 times the personal price.</li>
+      <li>If you join an institution, the research software engineers (RSEs) and IT staff of that institution see the jobs of all its users.</li>
+      <li>You can delete your account. Contact: <a href="mailto:help@labmill.org">help@labmill.org</a>.</li>
+    </ul>
+
+    <h2>What the Labmill client does on your computer</h2>
+    <p>The client runs on your computer. It connects to your clusters with your own login. Transfers go straight between your computer and your cluster, or through an S3 bucket that you name. Cluster passwords and two-factor codes are not written to disk and are not sent to us.</p>
+    <p>The assistant in the client is Claude, a model of Anthropic. When you chat, the client sends your messages and the context the assistant needs to a model service. This context can include job states, resource use, the end of a log, and the text of a file that the assistant reads for you. The client asks you before it reads a file that can hold keys or tokens, because the content goes to the model. By default the client calls the Anthropic API with your own Anthropic key, and then Anthropic's terms and privacy policy apply to that traffic. If you use the Labmill relay, the model calls go through our service (see "Processors"). [OWNER: confirm which route is live at launch: your own key, the Labmill relay, or both.]</p>
+
+    <h2>Data we collect</h2>
+    <h3>Sign-in data</h3>
+    <p>You sign in with Google, GitHub or ORCID. [OWNER: confirm the provider list at launch; LinkedIn is planned.] We receive from the provider your name, email address, a provider account ID and, if the provider gives it, a profile picture and language. For Google we ask for the scopes <code>openid email profile</code> only. For GitHub we read your primary verified email address. We do not receive your provider password.</p>
+    <p>An account has a session cookie that is needed for sign-in (secure, HTTP-only, valid up to 30 days). Tokens that you make for the client are kept as hashes [OWNER: confirm] and you can revoke them in the settings. [OWNER: list any analytics or other cookies; none are in the design documents.]</p>
+    <h3>Public research profile (only with your consent)</h3>
+    <p>At sign-up we show which public sources we may read, for example ORCID, publication lists, GitHub and a faculty page. We read them only if you tick the checkbox. We use them to find your institution, field and experience. You can see, correct and delete this profile at any time.</p>
+    <h3>Your institutions and field</h3>
+    <p>You tell us the institutions and HPC centers where you have accounts. If you join an institution's team, you confirm an email address at one of its domains with a code. We may store your field of science from a public list. A narrow subfield is shared only when many users have it (see below).</p>
+    <h3>Job records</h3>
+    <p>After a job changes state, the client can send a job record. It holds numbers and categories: the cluster, partition and constraints, requested and used CPU, memory, GPUs and time, state, exit code, queue wait, failure category, and the names and versions of software the job used. It does not hold the job name, folder or file names, the command line, project or grant names, your data or your code.</p>
+    <h3>Redacted log lines</h3>
+    <p>For a failed job only, the client can send a few log lines around the error. The client removes secrets, paths, user and host names, IP addresses, email addresses and long numbers, and also every job, folder, file and project name that it knows. The server removes the generic items again. <strong>Risk:</strong> an error line can still name a gene, a compound or a project. If your work is confidential, use the per-job "do not share" switch or the opt-out plan. Do not rely on the redaction alone.</p>
+    <h3>Model use</h3>
+    <p>We count the tokens that you use each day and month against your budget. [OWNER: confirm whether the text of prompts and answers is stored on our side, and for how long.]</p>
+    <h3>Billing data</h3>
+    <p>Stripe takes your payment. We never hold card numbers. We keep the plan, its price factor, its status, the end of the period and the Stripe reference. [OWNER: confirm which invoice and tax data we keep.]</p>
+    <h3>Messages and support</h3>
+    <p>If you write to <a href="mailto:help@labmill.org">help@labmill.org</a>, we keep the email and our answer. Members of an institution can send help requests to the RSEs of that institution and read their messages in the app.</p>
+    <h3>Audit records</h3>
+    <p>We log sign-in events and changes to teams and invitations. When Labmill staff look at a user's job data for support, the access is logged with a reason.</p>
+
+    <h2>What never leaves your computer</h2>
+    <p>Your data files, your code, your results, job names, folder and file names, command lines, project and grant names and descriptions, cluster passwords and two-factor codes. Exception: content that you ask the assistant to read goes to the model provider, as described above.</p>
+
+    <h2>How we use data</h2>
+    <ul>
+      <li>To run your account, show your jobs, and give advice for your clusters.</li>
+      <li>To bill you and to prevent abuse.</li>
+      <li>To build a knowledge base and statistics: which settings work on which clusters, common failure causes, and how often software is used. We use retrieval and statistics. <strong>We do not train models</strong> on your data. [OWNER: confirm this wording.]</li>
+      <li>To answer your questions and send service messages. Marketing email only with your opt-in. [OWNER: confirm.]</li>
+    </ul>
+    <p>Legal bases for users in the EU, UK and Switzerland: contract (to give you the service), consent (public profile, learning pool, marketing email, which you can withdraw) and legitimate interest (security, abuse prevention, service statistics). [OWNER: confirm with a lawyer.]</p>
+
+    <h2>The learning pool and the opt-out</h2>
+    <p>By default your job records help the shared learning pool, without your user ID. A group is counted only when at least 3 users contribute, so one person cannot be singled out. A software package or subfield enters the pool only when it is common (at least 10 users at 3 institutions; these numbers can change). Until then it is visible only to you and, for software, to the RSEs of your institution.</p>
+    <p>You can opt out in the settings. Your records are then not used in the pool. <strong>The opt-out plan costs 5 times the personal price.</strong> Marking a single job "do not share" counts as an opt-out for that job. If you opt out after you paid, the price changes at the next billing step [OWNER: confirm how and when]. Records that already went into anonymous statistics stay in them, without your identity. [OWNER: confirm.]</p>
+
+    <h2>Institutions and RSE visibility</h2>
+    <p>If you join an institution's team (corporate plan), the RSEs and IT staff of that institution who are team administrators see the jobs of all users of that institution and the names and email addresses of its members. They can correct the institution's site facts, see failure trends, and send you messages. We tell you this at sign-up, at the join step and at the first run of the client. Raw job records and log lines stay inside the institution's team. Only general lessons and anonymous statistics go to the shared pool. An institution in the EU can choose that only users who opt in are visible. [OWNER: confirm this option is built.]</p>
+    <p>If you use Labmill with a personal card and no institution, no institution sees your jobs.</p>
+
+    <h2>Processors and where data goes</h2>
+    <table>
+      <thead><tr><th>Who</th><th>What for</th><th>Data</th></tr></thead>
+      <tbody>
+        <tr><td>Amazon Web Services (a region in the United States)</td><td>Hosting, database, storage, backups, and the email service (Amazon SES)</td><td>All account and job data; email to and from help@labmill.org</td></tr>
+        <tr><td>Anthropic</td><td>The Claude model for the assistant</td><td>Your prompts and the context the client sends [OWNER: direct API or through Amazon Bedrock]</td></tr>
+        <tr><td>Stripe</td><td>Payments, invoices, tax</td><td>Name, email, card data (held by Stripe), billing address</td></tr>
+        <tr><td>Google, GitHub, ORCID</td><td>Sign-in</td><td>The data in "Sign-in data" above</td></tr>
+        <tr><td>[OWNER: Fireworks AI or other crawler and search vendors]</td><td>Reading public documentation (no personal data of users)</td><td>Public web pages only</td></tr>
+      </tbody>
+    </table>
+    <p>Our servers are in the United States. If you are in another country, your data is processed in the United States. [OWNER: transfer mechanism, for example the EU-US Data Privacy Framework or standard contractual clauses, and the signed processor agreements.] An EU region is planned; we will change this policy when it exists. We do not sell personal data. [OWNER: confirm.]</p>
+    <p>We may also give data to authorities when the law requires it. [OWNER: add the process for legal requests.]</p>
+
+    <h2>How long we keep data</h2>
+    <ul>
+      <li>Job records: 3 years, then only in anonymous statistics.</li>
+      <li>Redacted log lines: 1 year.</li>
+      <li>Consent records: as long as the account exists, plus the time the law requires as proof.</li>
+      <li>Account data: until you delete the account.</li>
+      <li>Billing records: [OWNER: period required by tax law].</li>
+      <li>Backups: 35 days, then they are deleted.</li>
+      <li>Support email: [OWNER: period].</li>
+    </ul>
+    <p>These periods are the planned defaults. [OWNER: confirm each one.]</p>
+
+    <h2>Account deletion</h2>
+    <p>You can delete your account in the app. Your name and email are removed at once, and sign-in, tokens and consents end. We remove the rest within 30 days: log lines after 1 year at the latest and job records after 3 years at the latest, as in the table above [OWNER: confirm whether you want to delete all job records inside the 30 days]. Backups age out within 35 days. What your records already added to anonymous statistics and to confirmed facts stays, without your identity. An active or past-due subscription must be canceled first. You can also write to <a href="mailto:help@labmill.org">help@labmill.org</a>. A minimal empty account row stays, so that old records cannot be linked to a new person.</p>
+
+    <h2>Your rights</h2>
+    <p>If you are in the EU, the EEA, the UK or Switzerland, you have the right to access your data, to have it corrected or deleted, to restrict or object to processing, to receive your data in a portable form, to withdraw consent at any time, and to complain to your data protection authority. People in some US states have similar rights. [OWNER: confirm the data export function is built and add US state rights.] To use a right, write to <a href="mailto:help@labmill.org">help@labmill.org</a>. We answer within one month. We may ask you to prove who you are. We do not make decisions about you that have legal effect by automated means.</p>
+    <p>Controller: [OWNER: legal name and address]. EU representative or data protection officer: [OWNER: needed or not].</p>
+
+    <h2>Security</h2>
+    <p>Traffic uses HTTPS. Access to data is limited by account and team. The client stores refresh tokens in your operating system's key store. No system is fully secure. Report a problem to <a href="mailto:help@labmill.org">help@labmill.org</a>. [OWNER: add the breach notice process.]</p>
+
+    <h2>The LabmillBot crawler</h2>
+    <p>LabmillBot reads public documentation pages of research computing systems. It obeys <code>robots.txt</code> and stores facts, short quotes and the source link, not whole pages. It is not meant to collect personal data. If a page holds personal data, write to <a href="mailto:bot@labmill.org">bot@labmill.org</a>. More: <a href="/bot/">the LabmillBot page</a>.</p>
+
+    <h2>Children</h2>
+    <p>Labmill is not for people under [OWNER: minimum age, for example 16 or 18]. We do not knowingly collect data of children.</p>
+
+    <h2>Changes</h2>
+    <p>If we change this policy in a way that matters, we tell you by email or in the app [OWNER: notice period] before the change starts. The effective date is at the top.</p>
+
+    <h2>Contact</h2>
+    <p><a href="mailto:help@labmill.org">help@labmill.org</a></p>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <p>Labmill. Easy number crunching for research.</p>
+    <ul><li><a href="/">Home</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/terms/">Terms</a></li><li><a href="mailto:help@labmill.org">Support</a></li></ul>
+  </div>
+</footer>
+</body>
+</html>
