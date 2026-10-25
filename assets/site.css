@@ -192,3 +192,17 @@ footer ul { list-style: none; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem;
   section { padding: 3.5rem 0; }
   .hero { padding: 2.5rem 0 3.5rem; }
 }
+
+/* Pricing: two plans side by side, one column on narrow screens */
+.plans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem; margin: 2rem 0 1rem; }
+.plan { padding: 1.4rem 1.4rem .6rem; border: 1px solid var(--cyan-line); border-top: 5px solid var(--prussian); border-radius: 8px; background: var(--paper); }
+.plan + .plan { border-top-color: var(--amber); }
+.page .plan h2 { margin: 0 0 .5rem; font-size: 1.35rem; }
+.plan .price { margin: 0; font-size: 1.05rem; color: var(--muted); }
+.plan .price span { font-size: 2.3rem; font-weight: 750; letter-spacing: -.03em; color: var(--ink); }
+.plan .tax { margin: 0 0 1rem; font-size: .9rem; color: var(--muted); }
+.plan p:not(.price):not(.tax) { font-size: .98rem; }
+.faq { margin: 0; }
+.faq dt { font-weight: 650; margin-top: 1.2rem; }
+.faq dd { margin: .25rem 0 0; color: var(--muted); max-width: var(--measure); }
+@media (max-width: 640px) { .plans { grid-template-columns: minmax(0, 1fr); } }

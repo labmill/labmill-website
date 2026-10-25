@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Labmill pricing</title>
-<meta name="description" content="Plans and prices for Labmill: personal, personal without sharing, and corporate for institutions.">
+<meta name="description" content="Labmill costs 6 USD a month, or 35 USD a month for a fully private account. Institutions: talk to us.">
 <meta name="theme-color" content="#0c2a44">
 <link rel="icon" href="../assets/mark.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../assets/site.css">
@@ -19,17 +19,48 @@
 <main class="page">
   <div class="wrap">
     <h1>Pricing</h1>
-    <p>Labmill is cheap for one researcher and built for whole institutions. Prices are not final. Where a price is not set, this page says so.</p>
-    <h2>Personal</h2>
-    <p>[OWNER: price] per month, paid with a personal card. [OWNER: decide what model use is included; the service has a daily limit, not a monthly budget, and no top-up.]</p>
-    <p>Sign in with Google or GitHub. Your job records and redacted log lines of failed jobs help Labmill learn which settings work on which clusters. Labmill does not receive your data files, code, job scripts or passwords.</p>
-    <h2>Personal, without sharing</h2>
-    <p>[OWNER: price] per month. This is 5 times the personal price. Use it if you do not want to add to the shared learning pool, for example for confidential work.</p>
-    <h2>Corporate, for institutions</h2>
-    <p>[OWNER: price] for a university, institute or research computing center. Research software engineers and team administrators of your institution can see the jobs of its users (except jobs a user marks private, if the institution turns this on), correct the facts about their own clusters and contact users who are stuck. Users are told this when they sign up. Raw job records stay inside your institution; only general lessons and anonymous statistics go to the shared pool.</p>
-    <p><a href="mailto:help@labmill.org">Talk to us about your institution</a></p>
+    <p>One researcher pays about the cost of a venti latte a month. You choose if redacted facts about your jobs help other researchers.</p>
+    <div class="plans">
+      <div class="plan">
+        <h2 id="plan-contribute">Contribute</h2>
+        <p class="price"><span>6 USD</span> a month</p>
+        <p class="tax">plus tax where it applies</p>
+        <p>Redacted facts about your jobs help Labmill learn which settings work on which clusters. This helps other researchers, and their jobs help you.</p>
+        <p>You can mark a single job "do not share" to keep it out of the shared pool.</p>
+      </div>
+      <div class="plan">
+        <h2 id="plan-private">Fully private</h2>
+        <p class="price"><span>35 USD</span> a month</p>
+        <p class="tax">plus tax where it applies</p>
+        <p>Contribution is off. Your job records do not go into the shared learning pool. Use it for confidential work.</p>
+        <p>You get the same service as with Contribute.</p>
+      </div>
+    </div>
+    <h2>Both plans include</h2>
+    <ul>
+      <li>Sign-in with Google or GitHub.</li>
+      <li>Model help through Labmill, up to a daily limit of model tokens. At the limit, it stops until the next day (UTC).</li>
+      <li>The facts Labmill knows about research computing clusters, each with its source and date.</li>
+      <li>Payment by card through Stripe. Labmill never holds your card number.</li>
+    </ul>
+    <p>Labmill does not receive your data files, code, job scripts or passwords, on either plan.</p>
+    <h2>Institutions</h2>
+    <p>A plan for a university, institute or research computing center. Research software engineers and team administrators of your institution can see the jobs of its users (except jobs a user marks private, if the institution turns this on), correct the facts about their own clusters and contact users who are stuck. Users are told this when they sign up. Raw job records stay inside your institution; only general lessons and anonymous statistics go to the shared pool.</p>
+    <p><a href="mailto:help@labmill.org">Talk to us about your institution</a>: help@labmill.org</p>
     <h2>Questions</h2>
-    <p>Write to <a href="mailto:help@labmill.org">help@labmill.org</a>.</p>
+    <dl class="faq">
+      <dt>Does the client cost money?</dt>
+      <dd>No. The Labmill client is free. It will be open source under the MIT license when it is published.</dd>
+      <dt>Why does the fully private plan cost more?</dt>
+      <dd>Redacted job facts from the Contribute plan make Labmill better for everyone. A fully private account does not give these facts, so it pays more of the cost.</dd>
+      <dt>Can I change the plan later?</dt>
+      <dd>Yes. Change the contribution setting in Settings. The subscription then moves to the other price.</dd>
+      <dt>Is tax included?</dt>
+      <dd>No. The prices are in USD. We add sales tax or VAT where the law requires it.</dd>
+      <dt>Can I cancel?</dt>
+      <dd>Yes. Subscriptions renew each month until you cancel them in Settings.</dd>
+    </dl>
+    <p>Other questions: write to <a href="mailto:help@labmill.org">help@labmill.org</a>.</p>
   </div>
 </main>
 <footer>
