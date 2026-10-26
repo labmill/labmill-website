@@ -18,75 +18,51 @@
 </header>
 <main class="page">
   <div class="wrap">
-    <p><strong>Draft. Not legal or tax advice. A lawyer must review it.</strong></p>
     <h1>Terms of service</h1>
-    <p>Effective date: [OWNER: date]. These terms are an agreement between you and [OWNER: legal name of the company, entity type, state and postal address; the company is not yet formed] ("Labmill", "we"). They cover labmill.org, app.labmill.org, the Labmill client and the Labmill service. When you create an account or use the service, you accept these terms and our <a href="/privacy/">privacy policy</a>. If you accept for an institution, you confirm that you may do so.</p>
+    <p><strong>Draft.</strong> This text is a draft. A lawyer must review it before launch. Last change: 2026-10-25.</p>
+    <p>The same text is in the app: <a href="https://app.labmill.org/terms">app.labmill.org/terms</a>.</p>
 
-    <h2>What Labmill is</h2>
-    <p>Labmill is an assistant that helps researchers run computations on HPC clusters. The client runs on your computer, connects to your clusters with your own login and uses the Claude model of Anthropic. The service (accounts, job history, knowledge base, billing) runs on our servers. The Labmill client will be open source under the MIT license when its repository is public. [OWNER: confirm the license and the public repository; the assignment of the yeetl code to the company is open.] The service is not open source.</p>
+    <h2>The service</h2>
+    <p>Labmill (app.labmill.org) shows your HPC jobs, gives help from a knowledge base of cluster facts, and lets research software engineers (RSEs) support the users of their institution. By signing in you accept these terms and the <a href="/privacy/">privacy policy</a>.</p>
 
     <h2>Your account</h2>
     <ul>
-      <li>You sign in with Google or GitHub. [OWNER: confirm the provider list at launch.] Keep your sign-in safe. You are responsible for what happens under your account and for the tokens that you make for the client.</li>
-      <li>Give true information. One person, one account.</li>
-      <li>You must be at least [OWNER: minimum age].</li>
+      <li>Sign in with Google or GitHub. Keep your account safe. You are responsible for what happens under it.</li>
+      <li>RSE and administrator rights need a verified institutional email and a DNS check. We can remove these rights when the check fails.</li>
+      <li>You can delete your account in Settings (see the privacy policy for what happens).</li>
     </ul>
 
-    <h2>Your cluster accounts and your duties</h2>
+    <h2>What you must not do</h2>
     <ul>
-      <li>Labmill uses your own cluster login. You must follow the rules of your institution and of each cluster. Labmill does not limit what you may run on a cluster; the cluster administrators decide. You are responsible for the commands that you approve.</li>
-      <li>The client shows scripts and commands before it runs them, and asks before it moves data. Read them. You approve them.</li>
-      <li>Do not upload or send through Labmill any data that the law forbids you to export or to send to a US service, for example controlled research under ITAR or EAR, or data you have no right to share. Do not put personal data of other people, health data or other special categories into prompts. [OWNER: confirm with a lawyer; education-record rules (FERPA) and similar.]</li>
-      <li>Do not attack, overload or reverse engineer the service, share your account, or use it to harm a cluster or other users. Do not use the output to build a competing service.</li>
+      <li>Upload export-controlled, classified, patient or other restricted data, or any data you may not share. Redaction of logs is not perfect and can miss names.</li>
+      <li>Break the rules of your cluster or institution, attack the service, or try to see data of others.</li>
+      <li>Use another person's identity or institutional email.</li>
     </ul>
 
-    <h2>Data and learning</h2>
-    <ul>
-      <li>You keep all rights in your data, code and results. We do not receive your data files, program code or job scripts. Content that you let the assistant read goes to the model provider (see the privacy policy).</li>
-      <li>You give us a license to use your job records and redacted log lines to run the service, and, unless you opt out, to build the shared learning pool and anonymous statistics. The license ends when you delete your account, except for anonymous statistics and confirmed facts, which do not identify you.</li>
-      <li>Redaction is not perfect. An error line can still name a gene, a compound or a project. For confidential work use the "do not share" switch or the opt-out plan.</li>
-      <li>If you join an institution's team and the institution allows it, its RSEs and team administrators see your jobs, except the jobs you mark private. The privacy policy gives the details.</li>
-    </ul>
+    <h2>Your data and contribution</h2>
+    <p>You keep your rights in your data. You give us the right to store and process it to run the service. If your contribution setting is on, redacted job data can feed anonymous statistics and general lessons for all users. What went into those, without your identity, stays after you leave. We do not train models on your data. A subscription costs 6 USD a month, or 35 USD a month for a fully private account (contribution off), plus tax where it applies.</p>
 
-    <h2>Plans, prices and payment</h2>
-    <ul>
-      <li>Personal plan ("Contribute"): 6 USD a month, plus tax where it applies. When the Labmill model relay is in use, it has a daily limit of model tokens [OWNER: amount; the code default is 200,000 tokens a day]. At the limit, the relay stops until the next day (UTC). There is no top-up. [OWNER: decide if a monthly budget, a top-up or a notice is wanted; none is built.]</li>
-      <li>Fully private plan (contribution off, you opt out of the learning pool): 35 USD a month, plus tax where it applies.</li>
-      <li>Corporate plan: by agreement with the institution.</li>
-      <li>Stripe takes the payment. Subscriptions renew each month until you cancel. [OWNER: renewal, cancellation, trial and refund terms.] Prices exclude taxes; we add sales tax or VAT where the law requires it. [OWNER: tax details.]</li>
-      <li>We may change prices with [OWNER: notice period] notice before the next billing period.</li>
-      <li>You must cancel an active subscription before you delete your account.</li>
-    </ul>
+    <h2>Visibility to RSEs</h2>
+    <p>RSEs and administrators of your tenant can see your shared jobs when the tenant allows it for all users. You can keep a job private. See the privacy policy.</p>
 
-    <h2>AI output</h2>
-    <p>The assistant can make mistakes. Its answers about clusters may be wrong, out of date or based on a fact with low confidence. The assistant says when it relies on such a fact. Check scripts, resource requests and results before you rely on them. Labmill is not responsible for lost compute time, queue priority, allocation use, cluster policy violations or wrong scientific results.</p>
+    <h2>Payment</h2>
+    <p>Paid plans are billed by our payment provider. Cancel at any time in Settings. You must cancel before you delete your account.</p>
 
-    <h2>Availability and changes</h2>
-    <p>We try to keep the service running but do not promise it. The client works without the service for the parts that do not need it [OWNER: confirm]. We may change or end features. We tell you about a change that matters [OWNER: notice period].</p>
+    <h2>No guarantee</h2>
+    <p>Answers and suggestions from Labmill can be wrong. Check them before you run jobs or change a cluster. The service is given as is, with no promise of uptime. To the extent the law allows, we are not liable for indirect loss, and our total liability is the amount you paid in the last 12 months.</p>
 
-    <h2>End of the agreement</h2>
-    <p>You can stop at any time and delete your account in the app. We may suspend or end an account that breaks these terms or harms the service or other users. What happens to your data is in the privacy policy.</p>
-
-    <h2>Disclaimer and liability</h2>
-    <p>[OWNER: lawyer to write the warranty disclaimer and the limit of liability, for example a cap at the fees paid in the last 12 months, and the parts that the law does not allow to limit. Consumer rights in your country stay.]</p>
-
-    <h2>Law and disputes</h2>
-    <p>[OWNER: governing law, court or arbitration, and place. The company form (Delaware PBC or Washington SPC) is not yet decided.]</p>
-
-    <h2>Changes to these terms</h2>
-    <p>If we change these terms in a way that matters, we tell you by email or in the app [OWNER: notice period] before the change starts. If you continue to use the service after that, you accept the new terms.</p>
-
-    <h2>The LabmillBot crawler</h2>
-    <p>LabmillBot is covered by <a href="/bot/">its own page</a>. Website owners can block it with <code>robots.txt</code>.</p>
+    <h2>Changes and end</h2>
+    <p>We can change these terms; we will tell you in the app before a material change. We can suspend an account that breaks these terms. You can stop at any time.</p>
 
     <h2>Contact</h2>
     <p><a href="mailto:help@labmill.org">help@labmill.org</a></p>
+
   </div>
 </main>
 <footer>
   <div class="wrap">
     <p>Labmill. Easy number crunching for research.</p>
-    <ul><li><a href="/">Home</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/terms/">Terms</a></li><li><a href="mailto:help@labmill.org">Support</a></li></ul>
+    <ul><li><a href="/">Home</a></li><li><a href="https://docs.labmill.org/">Docs</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/terms/">Terms</a></li><li><a href="mailto:help@labmill.org">Support</a></li></ul>
   </div>
 </footer>
 </body>

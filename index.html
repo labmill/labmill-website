@@ -13,7 +13,7 @@
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<div class="status" id="status" role="status"><div class="wrap"><p>The app is down for maintenance. This page still works.</p></div></div>
+<div class="status" id="status" role="status"><div class="wrap"><p>The app is down for maintenance. This page and the docs still work.</p></div></div>
 
 <header class="top">
   <div class="wrap">
@@ -22,6 +22,7 @@
       <a href="#how">How it works</a>
       <a href="#teams">For research computing teams</a>
       <a href="/pricing/">Pricing</a>
+      <a href="https://docs.labmill.org/">Docs</a>
       <a class="signin" href="https://app.labmill.org/">Sign in</a>
     </nav>
   </div>
@@ -35,9 +36,9 @@
         <p class="lede">Your code already works on your own computer, often on a single GPU. Labmill takes it to your cluster: it finds the data, writes the job, runs it and brings the results back. You don't need to learn Slurm or the terminal.</p>
         <div class="actions">
           <a class="btn" href="https://app.labmill.org/">Sign in to Labmill</a>
-          <a class="quiet" href="#how">See how it works</a>
+          <a class="quiet" href="https://docs.labmill.org/user/install/">Get the free client</a>
         </div>
-        <p class="slurm">For Slurm clusters. On macOS, Windows and Linux.</p>
+        <p class="slurm">For Slurm clusters. On macOS, Windows and Linux. The client is free and open source.</p>
       </div>
 
       <figure class="run" aria-label="Example of a Labmill session">
@@ -90,7 +91,8 @@ python train.py --data "$TMPDIR/images"</pre>
     <div class="wrap">
       <div>
         <h2>It knows your cluster before you ask</h2>
-        <p>Every cluster has its own partitions, storage rules and software. Labmill reads the public documentation of research computing centers and keeps each fact with its source and date. Real jobs make a fact more or less trusted, and Labmill tells you when it relies on a fact it is not sure of.</p>
+        <p>Every cluster has its own partitions, storage rules and software. Labmill reads the public documentation of research computing centers and keeps each fact with its source, the date it was read and a confidence.</p>
+        <p>Without an account, you can <a href="https://app.labmill.org/systems">browse more than 200 HPC systems</a>, sorted by distance from you, and <a href="https://app.labmill.org/facts">search the facts</a>.</p>
         <p>Labmill never receives your data files, code or passwords.</p>
       </div>
       <div class="fact">
@@ -98,7 +100,7 @@ python train.py --data "$TMPDIR/images"</pre>
         <dl>
           <dt>Source</dt><dd>hpc.example.edu/docs/partitions</dd>
           <dt>Read on</dt><dd>2026-10-21</dd>
-          <dt>Trust</dt><dd><span class="meter" aria-hidden="true"></span>confirmed by 37 jobs</dd>
+          <dt>Confidence</dt><dd><span class="meter" aria-hidden="true"></span>Medium: one page, official docs</dd>
         </dl>
       </div>
     </div>
@@ -107,7 +109,7 @@ python train.py --data "$TMPDIR/images"</pre>
   <section class="teams" id="teams">
     <div class="wrap">
       <h2>For research computing teams</h2>
-      <p>Labmill answers the routine first-job questions: which partition, where to put data, why a job failed. The corporate tier is for institutions. It lets research software engineers and HPC staff see how their users' jobs go, correct the facts about their own clusters and contact users who are stuck, so your team has time for the hard problems.</p>
+      <p>Labmill answers the routine first-job questions: which partition, where to put data, why a job failed. The institution plan lets research software engineers (RSEs) and HPC staff get help requests from their users and send them messages. With the institution's setting and the user's consent, RSEs also see how their users' jobs go. So your team has time for the hard problems.</p>
       <p><a href="/pricing/">See the plans</a> &middot; <a href="mailto:help@labmill.org">Talk to us about your institution</a></p>
     </div>
   </section>
@@ -117,6 +119,7 @@ python train.py --data "$TMPDIR/images"</pre>
   <div class="wrap">
     <p>Labmill. Easy number crunching for research.</p>
     <ul>
+      <li><a href="https://docs.labmill.org/">Docs</a></li>
       <li><a href="/bot/">The Labmill crawler</a></li>
       <li><a href="/privacy/">Privacy</a></li>
       <li><a href="/terms/">Terms</a></li>
@@ -130,7 +133,7 @@ python train.py --data "$TMPDIR/images"</pre>
 (function () {
   var ctl = new AbortController();
   var t = setTimeout(function () { ctl.abort(); }, 4000);
-  fetch("https://app.labmill.org/api/auth/providers", { mode: "no-cors", cache: "no-store", signal: ctl.signal })
+  fetch("https://app.labmill.org/healthz", { mode: "no-cors", cache: "no-store", signal: ctl.signal })
     .catch(function () { document.getElementById("status").classList.add("down"); })
     .finally(function () { clearTimeout(t); });
 })();
